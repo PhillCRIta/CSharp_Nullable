@@ -20,7 +20,7 @@ int i = (int)Obj;    // Unboxing
 
 
 //CASE 1
-//compiler give an error
+//compiler gives an error
 //int aa = null; //IS NOT POSSIBILE ASSIGN TO VALUE TYPE A NULL VALUE
 //Errore (attivo)	CS0037	Non è possibile convertire Null in 'int' perché è un tipo valore che non ammette i valori Null	003_Nullable	
 //string aaa = null; //is possibile set to null a reference type  variable
@@ -36,11 +36,11 @@ NULLABLE_INT = 5;
 int? B = null;
 B = 5;
 //Nullable<string> s = null;//COMPILER GIVES AN ERROR, IS NOT POSSIBILE USE THE NULLABLE TYPE TO WRAP A REFERENCE TYPE.
-//Errore(attivo) CS0453 Il tipo 'string' deve essere un tipo valore che non ammette i valori Null per poter essere usato come parametro 'T' nel metodo o nel tipo generico 'Nullable<T>'	003_Nullable	
+//CS0453 Il tipo 'string' deve essere un tipo valore che non ammette i valori Null per poter essere usato come parametro 'T' nel metodo o nel tipo generico 'Nullable<T>'	003_Nullable	
 
 //CASE 3
-//if possibile to assign null value for Reference Type variables,
-//but (form C#8.0) if you don't disable the manage of nullable reference type in the configuration project
+//is possibile to assign null value for Reference Type variables,
+//but (from C#8.0) if you don't disable the manage of nullable reference type in the configuration project
 //<Nullable>enable</Nullable>
 //the compiler shows a squiggly line warning under the null value, to indicate possible NullReferenceException
 //you can also use  <WarningsAsErrors>Nullable</WarningsAsErrors> to force the warning squiggly line to error
@@ -104,7 +104,7 @@ MyClass E = new();
 string name = E.Name_NULLABLE!;
 //also in this case the compile ignore the warning green squiggly line 
 //but in fact Name_NULLABLE remain null and throws an NullReferenceException
-Console.WriteLine(E.Name_NULLABLE!.ToString());
+//GIVES AN ERROR Console.WriteLine(E.Name_NULLABLE!.ToString());
 //in this last example the compiler doesn't throw and excelption because SettedString is not null inside a class
 Console.WriteLine(E!.SettedString.ToString());
 
